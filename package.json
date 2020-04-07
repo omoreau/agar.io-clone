@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A simple Agar.io clone",
   "main": "server/server.js",
+  "engines": {
+    "node": "11.x.x"
+  }
   "scripts": {
     "build": "gulp build",
     "start": "gulp run",
@@ -39,7 +42,7 @@
     "babel-preset-es2015": "^6.24.1",
     "chai": "^3.5.0",
     "express": "^4.13.4",
-    "gulp": "^4.0.2",
+    "gulp": "3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-jshint": "^2.0.1",
     "gulp-mocha": "^2.2.0",
