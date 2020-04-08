@@ -320,9 +320,9 @@ function drawFood(food) {
     graph.fillStyle = 'hsl(' + food.hue + ', 100%, 50%)';
     graph.lineWidth = foodConfig.border;
     graph.drawImage(jeremie,food.x,food.y);
-    drawCircle(food.x - player.x + global.screenWidth / 2,
+    /*drawCircle(food.x - player.x + global.screenWidth / 2,
                food.y - player.y + global.screenHeight / 2,
-               food.radius, global.foodSides);
+               food.radius, global.foodSides);*/
 }
 
 function drawVirus(virus) {
