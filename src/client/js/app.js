@@ -2,7 +2,7 @@ var io = require('socket.io-client');
 var ChatClient = require('./chat-client');
 var Canvas = require('./canvas');
 var global = require('./global');
-var jeremie = document.getElementById('jeremiepng');
+//var jeremie = document.getElementById('jeremiepng');
 var playerNameInput = document.getElementById('playerNameInput');
 var socket;
 var reason;
@@ -319,7 +319,7 @@ function drawFood(food) {
     graph.strokeStyle = 'hsl(' + food.hue + ', 100%, 45%)';
     graph.fillStyle = 'hsl(' + food.hue + ', 100%, 50%)';
     graph.lineWidth = foodConfig.border;
-    graph.drawImage(jeremie,0,0);
+    //graph.drawImage(jeremie,0,0);
     drawCircle(food.x - player.x + global.screenWidth / 2,
                food.y - player.y + global.screenHeight / 2,
                food.radius, global.foodSides);
