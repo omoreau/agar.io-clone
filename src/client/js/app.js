@@ -3,6 +3,8 @@ var ChatClient = require('./chat-client');
 var Canvas = require('./canvas');
 var global = require('./global');
 var jeremie = document.getElementById('jeremiepng');
+var jf = document.getElementById('jfpng');
+var seb = document.getElementById('sebpng');
 var playerNameInput = document.getElementById('playerNameInput');
 var socket;
 var reason;
@@ -296,7 +298,7 @@ function setupSocket(socket) {
     });
 }
 
-function drawCircle(centerX, centerY, radius, sides) {
+function drawCircle(centerX, centerY, radius, sides, indexPng) {
     var theta = 0;
     var x = 0;
     var y = 0;
@@ -313,16 +315,20 @@ function drawCircle(centerX, centerY, radius, sides) {
     graph.closePath();
     graph.stroke();
     graph.fill();
+    
+    var arrayImg = [jeremie, jf, seb];
+    if (indexPng || indexPng === 0) {
+        graph.drawImage(arrayImg[indexPng], centerX-12, centerY-12, 30, 30);
+    }
 }
 
 function drawFood(food) {
     graph.strokeStyle = 'hsl(' + food.hue + ', 100%, 45%)';
     graph.fillStyle = 'hsl(' + food.hue + ', 100%, 50%)';
     graph.lineWidth = foodConfig.border;
-    graph.drawImage(jeremie,food.x,food.y);
-    /*drawCircle(food.x - player.x + global.screenWidth / 2,
+    drawCircle(food.x - player.x + global.screenWidth / 2,
                food.y - player.y + global.screenHeight / 2,
-               food.radius, global.foodSides);*/
+               food.radius, global.foodSides,food.png);
 }
 
 function drawVirus(virus) {
